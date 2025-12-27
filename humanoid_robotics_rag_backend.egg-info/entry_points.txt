@@ -1,0 +1,3 @@
+[console_scripts]
+ingest = ingest:main
+server = main:main

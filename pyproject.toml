@@ -1,0 +1,35 @@
+[project]
+name = "humanoid-robotics-rag-backend"
+version = "0.1.0"
+description = "Backend for the Humanoid Robotics RAG system"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "cohere>=5.5.3",
+    "qdrant-client>=1.9.1",
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.2",
+    "python-dotenv>=1.0.0",
+    "pytest>=8.2.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.32.0",
+    "pydantic>=2.10.0",
+    "google-generativeai>=0.8.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+
+[project.scripts]
+ingest = "ingest:main"
+server = "main:main"

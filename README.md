@@ -1,0 +1,91 @@
+# Humanoid Robotics RAG Backend
+
+This backend implements a Retrieval-Augmented Generation (RAG) system for humanoid robotics documentation. It provides functionality to:
+
+- Extract and process documentation from Docusaurus sites
+- Generate embeddings using Cohere
+- Store embeddings in Qdrant vector database
+- Provide API endpoints for semantic search and chat functionality
+
+## Features
+
+- **Document Processing**: Automatically crawls and extracts text from Docusaurus documentation sites
+- **Embedding Generation**: Creates vector embeddings using Cohere's embedding models
+- **Vector Storage**: Stores embeddings in Qdrant for efficient similarity search
+- **API Endpoints**: FastAPI endpoints for semantic search and chat functionality
+
+## Requirements
+
+- Python 3.10+
+- UV package manager
+- Cohere API key
+- Qdrant vector database (cloud or self-hosted)
+
+## Setup
+
+1. Clone the repository
+2. Install UV package manager if not already installed
+3. Create a virtual environment and install dependencies:
+
+```bash
+uv venv
+source .venv/Scripts/activate  # On Windows use: .venv\Scripts\activate
+uv pip install -r requirements.txt
+```
+
+4. Create a `.env` file with your API keys:
+
+```env
+COHERE_API_KEY=your_cohere_api_key
+QDRANT_URL=your_qdrant_url
+QDRANT_API_KEY=your_qdrant_api_key
+OPENAI_API_KEY=your_openai_api_key  # Optional, for alternative embedding models
+```
+
+## Usage
+
+### Running the Embedding Pipeline
+
+To process documentation and store embeddings:
+
+```bash
+uv run python main.py --url https://your-docusaurus-site.com --chunk-size 1000 --chunk-overlap 100 --collection-name rag_embedding
+```
+
+### Running the API Server
+
+```bash
+uv run uvicorn main:app --reload --port 8000
+```
+
+### Running the Ingestion Script
+
+```bash
+uv run python ingest.py --url https://your-docusaurus-site.com
+```
+
+## API Endpoints
+
+- `POST /chat`: Chat with the RAG system
+- `POST /search`: Semantic search in the documentation
+- `GET /health`: Health check endpoint
+
+## Architecture
+
+The backend consists of:
+
+- **Embedding Pipeline**: Processes documents and generates embeddings
+- **Qdrant Client**: Vector database for similarity search
+- **FastAPI App**: API endpoints for search and chat
+- **RAG Pipeline**: Combines retrieval and generation for responses
+
+## Configuration
+
+Environment variables:
+
+- `COHERE_API_KEY`: API key for Cohere services
+- `QDRANT_URL`: URL for Qdrant vector database
+- `QDRANT_API_KEY`: API key for Qdrant (if required)
+- `OPENAI_API_KEY`: Optional API key for OpenAI services
+- `MODEL_NAME`: Model to use for generation (default: gpt-3.5-turbo)
+- `TEMPERATURE`: Temperature for generation (default: 0.7)

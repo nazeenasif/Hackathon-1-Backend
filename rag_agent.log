@@ -1,0 +1,1708 @@
+2025-12-23 18:36:20,365 - main - INFO - main.py:1138 - RAG Agent API starting up...
+2025-12-23 18:36:23,458 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-23 18:36:24,371 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-23 18:36:24,373 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-23 18:36:24,373 - main - INFO - main.py:1142 - Successfully connected to Qdrant
+2025-12-23 18:36:26,837 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-23 18:36:27,451 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-23 18:36:27,453 - main - INFO - main.py:1149 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-23 18:36:27,454 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-23 18:36:27,454 - main - INFO - main.py:1161 - Successfully initialized Gemini client
+2025-12-23 18:39:44,644 - main - INFO - main.py:1192 - Received /ask request (ID: 41f6ce88-6aeb-4165-a76a-0b4c7f4225fc): 'What is humanoid robotics?...' with top_k=5
+2025-12-23 18:39:44,667 - main - INFO - main.py:1208 - Creating RAG agent for query (ID: 41f6ce88-6aeb-4165-a76a-0b4c7f4225fc)...
+2025-12-23 18:39:44,668 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-23 18:39:44,668 - main - INFO - main.py:1215 - Processing query with RAG agent (ID: 41f6ce88-6aeb-4165-a76a-0b4c7f4225fc)...
+2025-12-23 18:39:44,669 - main - INFO - main.py:1399 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-23 18:39:44,669 - main - INFO - main.py:1403 - Starting retrieval from Qdrant...
+2025-12-23 18:39:44,670 - main - INFO - main.py:1302 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-23 18:39:47,749 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-23 18:39:48,670 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-23 18:39:48,699 - main - ERROR - main.py:1369 - Error retrieving from Qdrant after 4025.35ms: 'QdrantClient' object has no attribute 'search'
+Traceback (most recent call last):
+  File "D:\Naz\Hackathon\humanoid-robotics-book\backend\main.py", line 1327, in retrieve_from_qdrant
+    search_result = qdrant_client.search(
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QdrantClient' object has no attribute 'search'
+2025-12-23 18:39:48,708 - main - INFO - main.py:1370 - Retrieval context status: EMPTY (due to error)
+2025-12-23 18:39:48,720 - main - ERROR - main.py:1407 - Retrieval error: 'QdrantClient' object has no attribute 'search'
+2025-12-23 18:39:48,726 - main - ERROR - main.py:1220 - RAG agent returned error (ID: 41f6ce88-6aeb-4165-a76a-0b4c7f4225fc): 'QdrantClient' object has no attribute 'search'
+2025-12-23 18:39:48,735 - main - ERROR - main.py:1268 - HTTP error in ask endpoint (ID: 41f6ce88-6aeb-4165-a76a-0b4c7f4225fc): Error processing query with RAG agent
+2025-12-23 18:48:57,900 - main - INFO - main.py:1138 - RAG Agent API starting up...
+2025-12-23 18:49:02,249 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-23 18:49:02,861 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-23 18:49:02,867 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-23 18:49:02,868 - main - INFO - main.py:1142 - Successfully connected to Qdrant
+2025-12-23 18:49:05,527 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-23 18:49:06,144 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-23 18:49:06,145 - main - INFO - main.py:1149 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-23 18:49:06,146 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-23 18:49:06,146 - main - INFO - main.py:1161 - Successfully initialized Gemini client
+2025-12-23 18:50:34,449 - main - INFO - main.py:1138 - RAG Agent API starting up...
+2025-12-23 18:50:38,513 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-23 18:50:39,119 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-23 18:50:39,126 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-23 18:50:39,127 - main - INFO - main.py:1142 - Successfully connected to Qdrant
+2025-12-23 18:50:42,794 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-23 18:50:43,319 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-23 18:50:43,321 - main - INFO - main.py:1149 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-23 18:50:43,321 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-23 18:50:43,321 - main - INFO - main.py:1161 - Successfully initialized Gemini client
+2025-12-23 18:53:35,980 - main - INFO - main.py:1192 - Received /ask request (ID: 2328066d-ee7f-4336-ad2e-cc732837f817): 'What is humanoid robotics?...' with top_k=5
+2025-12-23 18:53:35,981 - main - INFO - main.py:1208 - Creating RAG agent for query (ID: 2328066d-ee7f-4336-ad2e-cc732837f817)...
+2025-12-23 18:53:35,981 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-23 18:53:35,981 - main - INFO - main.py:1215 - Processing query with RAG agent (ID: 2328066d-ee7f-4336-ad2e-cc732837f817)...
+2025-12-23 18:53:35,981 - main - INFO - main.py:1399 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-23 18:53:35,982 - main - INFO - main.py:1403 - Starting retrieval from Qdrant...
+2025-12-23 18:53:35,982 - main - INFO - main.py:1302 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-23 18:53:41,426 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-23 18:53:42,330 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-23 18:53:42,357 - main - ERROR - main.py:1369 - Error retrieving from Qdrant after 6375.32ms: 'QdrantClient' object has no attribute 'search'
+Traceback (most recent call last):
+  File "D:\Naz\Hackathon\humanoid-robotics-book\backend\main.py", line 1327, in retrieve_from_qdrant
+    search_result = qdrant_client.search(
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QdrantClient' object has no attribute 'search'
+2025-12-23 18:53:42,359 - main - INFO - main.py:1370 - Retrieval context status: EMPTY (due to error)
+2025-12-23 18:53:42,363 - main - ERROR - main.py:1407 - Retrieval error: 'QdrantClient' object has no attribute 'search'
+2025-12-23 18:53:42,363 - main - ERROR - main.py:1220 - RAG agent returned error (ID: 2328066d-ee7f-4336-ad2e-cc732837f817): 'QdrantClient' object has no attribute 'search'
+2025-12-23 18:53:42,363 - main - ERROR - main.py:1268 - HTTP error in ask endpoint (ID: 2328066d-ee7f-4336-ad2e-cc732837f817): Error processing query with RAG agent
+2025-12-25 14:42:24,262 - main - INFO - main.py:1138 - RAG Agent API starting up...
+2025-12-25 14:42:27,935 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 14:42:28,392 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 14:42:28,401 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 14:42:28,404 - main - INFO - main.py:1142 - Successfully connected to Qdrant
+2025-12-25 14:42:30,414 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 14:42:30,880 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 14:42:30,883 - main - INFO - main.py:1149 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 14:42:30,884 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 14:42:30,885 - main - INFO - main.py:1161 - Successfully initialized Gemini client
+2025-12-25 14:43:46,826 - main - INFO - main.py:1192 - Received /ask request (ID: 9b775250-6b60-4710-9d2e-729d146d36c9): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 14:43:46,826 - main - INFO - main.py:1208 - Creating RAG agent for query (ID: 9b775250-6b60-4710-9d2e-729d146d36c9)...
+2025-12-25 14:43:46,827 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 14:43:46,828 - main - INFO - main.py:1215 - Processing query with RAG agent (ID: 9b775250-6b60-4710-9d2e-729d146d36c9)...
+2025-12-25 14:43:46,828 - main - INFO - main.py:1399 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 14:43:46,829 - main - INFO - main.py:1403 - Starting retrieval from Qdrant...
+2025-12-25 14:43:46,829 - main - INFO - main.py:1302 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 14:43:49,145 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 14:43:49,913 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 14:43:49,945 - main - ERROR - main.py:1369 - Error retrieving from Qdrant after 3115.49ms: 'QdrantClient' object has no attribute 'search'
+Traceback (most recent call last):
+  File "D:\Naz\Hackathon\humanoid-robotics-book\backend\main.py", line 1327, in retrieve_from_qdrant
+    search_result = qdrant_client.search(
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QdrantClient' object has no attribute 'search'
+2025-12-25 14:43:49,954 - main - INFO - main.py:1370 - Retrieval context status: EMPTY (due to error)
+2025-12-25 14:43:49,956 - main - ERROR - main.py:1407 - Retrieval error: 'QdrantClient' object has no attribute 'search'
+2025-12-25 14:43:49,956 - main - ERROR - main.py:1220 - RAG agent returned error (ID: 9b775250-6b60-4710-9d2e-729d146d36c9): 'QdrantClient' object has no attribute 'search'
+2025-12-25 14:43:49,957 - main - ERROR - main.py:1268 - HTTP error in ask endpoint (ID: 9b775250-6b60-4710-9d2e-729d146d36c9): Error processing query with RAG agent
+2025-12-25 15:04:50,793 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 15:04:54,008 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:04:54,552 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:04:54,555 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 15:04:54,556 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 15:04:56,654 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:04:57,099 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:04:57,100 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 15:04:57,101 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:04:57,101 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 15:06:54,779 - main - INFO - main.py:1209 - Received /ask request (ID: a451b52a-3d0f-4cf5-a289-2d518f6b2415): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:06:54,780 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: a451b52a-3d0f-4cf5-a289-2d518f6b2415)...
+2025-12-25 15:06:54,780 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:06:54,780 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: a451b52a-3d0f-4cf5-a289-2d518f6b2415)...
+2025-12-25 15:06:54,780 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:06:54,781 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 15:06:54,781 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 15:06:57,079 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:06:57,806 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 15:06:58,257 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 15:06:58,259 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3477.99ms
+2025-12-25 15:06:58,259 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 15:06:58,260 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 15:06:58,260 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 15:06:58,260 - main - INFO - main.py:1471 - Generating response with Gemini...
+2025-12-25 15:06:59,294 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:07:00,459 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:07:02,611 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:07:02,611 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:07:02,611 - main - INFO - main.py:1476 - Gemini response generated successfully
+2025-12-25 15:07:02,611 - main - INFO - main.py:1276 - Request completed successfully (ID: a451b52a-3d0f-4cf5-a289-2d518f6b2415) in 7831.93ms. Retrieved 5 chunks.
+2025-12-25 15:14:11,466 - main - INFO - main.py:1209 - Received /ask request (ID: 226fa966-f7a8-4aa3-889c-3ee58e77aabc): 'What is ROS 2?...' with top_k=5
+2025-12-25 15:14:11,466 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: 226fa966-f7a8-4aa3-889c-3ee58e77aabc)...
+2025-12-25 15:14:11,466 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:14:11,466 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: 226fa966-f7a8-4aa3-889c-3ee58e77aabc)...
+2025-12-25 15:14:11,467 - main - INFO - main.py:1419 - RAG agent processing query: 'What is ROS 2?...' with top_k=5
+2025-12-25 15:14:11,467 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 15:14:11,467 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is ROS 2?...' (top_k: 5)
+2025-12-25 15:14:14,283 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:14:15,616 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 15:14:16,149 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 15:14:16,161 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 4694.33ms
+2025-12-25 15:14:16,162 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 15:14:16,163 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 15:14:16,163 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 15:14:16,163 - main - INFO - main.py:1471 - Generating response with Gemini...
+2025-12-25 15:14:17,146 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:14:18,313 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:14:20,476 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:14:20,476 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:14:20,476 - main - INFO - main.py:1476 - Gemini response generated successfully
+2025-12-25 15:14:20,477 - main - INFO - main.py:1276 - Request completed successfully (ID: 226fa966-f7a8-4aa3-889c-3ee58e77aabc) in 9010.98ms. Retrieved 5 chunks.
+2025-12-25 15:23:15,594 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:23:16,128 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:23:16,129 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 15:23:16,130 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:23:56,252 - main - INFO - main.py:1209 - Received /ask request (ID: b419aff4-d68c-4799-a61f-a63034906d6d): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:23:56,252 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: b419aff4-d68c-4799-a61f-a63034906d6d)...
+2025-12-25 15:23:56,252 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:23:56,253 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: b419aff4-d68c-4799-a61f-a63034906d6d)...
+2025-12-25 15:23:56,253 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:23:56,253 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 15:23:56,253 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 15:23:58,489 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:23:59,269 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 15:23:59,762 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 15:23:59,763 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3510.22ms
+2025-12-25 15:23:59,763 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 15:23:59,764 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 15:23:59,764 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 15:23:59,764 - main - INFO - main.py:1471 - Generating response with Gemini...
+2025-12-25 15:24:00,794 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:24:01,952 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:24:04,113 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:24:04,113 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:24:04,113 - main - INFO - main.py:1476 - Gemini response generated successfully
+2025-12-25 15:24:04,114 - main - INFO - main.py:1276 - Request completed successfully (ID: b419aff4-d68c-4799-a61f-a63034906d6d) in 7861.58ms. Retrieved 5 chunks.
+2025-12-25 15:27:43,235 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 15:27:45,795 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:27:46,290 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:27:46,297 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 15:27:46,299 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 15:27:48,421 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:27:48,850 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:27:48,852 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 15:27:48,852 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:27:48,853 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 15:29:19,447 - main - INFO - main.py:1209 - Received /ask request (ID: dcaa8635-d860-4d83-99fd-e6b616fab306): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:29:19,447 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: dcaa8635-d860-4d83-99fd-e6b616fab306)...
+2025-12-25 15:29:19,447 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:29:19,447 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: dcaa8635-d860-4d83-99fd-e6b616fab306)...
+2025-12-25 15:29:19,447 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:29:19,447 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 15:29:19,448 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 15:29:22,610 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:29:24,144 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 15:29:24,587 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 15:29:24,591 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 5143.47ms
+2025-12-25 15:29:24,592 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 15:29:24,593 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 15:29:24,593 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 15:29:24,593 - main - INFO - main.py:1471 - Generating response with Gemini...
+2025-12-25 15:29:25,597 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:29:26,751 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:29:28,914 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:29:28,915 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:29:28,915 - main - WARNING - main.py:1478 - LLM returned fallback message despite having valid chunks, attempting to generate better response
+2025-12-25 15:29:28,915 - main - INFO - main.py:1488 - Gemini response generated successfully
+2025-12-25 15:29:28,916 - main - INFO - main.py:1276 - Request completed successfully (ID: dcaa8635-d860-4d83-99fd-e6b616fab306) in 9468.72ms. Retrieved 5 chunks.
+2025-12-25 15:33:21,651 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 15:33:24,161 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:33:24,609 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:33:24,615 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 15:33:24,617 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 15:33:26,715 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:33:27,154 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:33:27,158 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 15:33:27,160 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:33:27,162 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 15:34:27,091 - main - INFO - main.py:1209 - Received /ask request (ID: 67a7b3b5-3ef4-4a00-8534-84356dcc35ed): 'What is ROS 2?...' with top_k=5
+2025-12-25 15:34:27,092 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: 67a7b3b5-3ef4-4a00-8534-84356dcc35ed)...
+2025-12-25 15:34:27,095 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:34:27,097 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: 67a7b3b5-3ef4-4a00-8534-84356dcc35ed)...
+2025-12-25 15:34:27,098 - main - INFO - main.py:1419 - RAG agent processing query: 'What is ROS 2?...' with top_k=5
+2025-12-25 15:34:27,100 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 15:34:27,109 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is ROS 2?...' (top_k: 5)
+2025-12-25 15:34:29,702 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:34:30,459 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 15:34:30,918 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 15:34:30,924 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3814.12ms
+2025-12-25 15:34:30,925 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 15:34:30,927 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 15:34:30,928 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 15:34:30,930 - main - INFO - main.py:1471 - Generating response with Gemini...
+2025-12-25 15:34:31,938 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:34:33,099 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:34:35,261 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:34:35,265 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:34:35,273 - main - WARNING - main.py:1478 - LLM returned fallback message despite having valid chunks, attempting to generate better response
+2025-12-25 15:34:35,274 - main - INFO - main.py:1488 - Gemini response generated successfully
+2025-12-25 15:34:35,275 - main - INFO - main.py:1276 - Request completed successfully (ID: 67a7b3b5-3ef4-4a00-8534-84356dcc35ed) in 8184.06ms. Retrieved 5 chunks.
+2025-12-25 15:42:09,785 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 15:42:12,601 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:42:13,111 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:42:13,120 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 15:42:13,120 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 15:42:15,166 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:42:15,601 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:42:15,603 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 15:42:15,604 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:42:15,604 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 15:42:40,398 - main - INFO - main.py:1209 - Received /ask request (ID: b1cce79b-4043-43c0-9d36-b52a692d0a70): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:42:40,398 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: b1cce79b-4043-43c0-9d36-b52a692d0a70)...
+2025-12-25 15:42:40,399 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:42:40,399 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: b1cce79b-4043-43c0-9d36-b52a692d0a70)...
+2025-12-25 15:42:40,399 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:42:40,399 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 15:42:40,399 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 15:42:42,636 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:42:44,008 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 15:42:44,460 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 15:42:44,463 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 4063.75ms
+2025-12-25 15:42:44,463 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 15:42:44,464 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 15:42:44,464 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 15:42:44,465 - main - INFO - main.py:1475 - Generating response with Gemini...
+2025-12-25 15:42:45,461 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:42:46,619 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:42:48,770 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:42:48,770 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:42:48,771 - main - WARNING - main.py:1482 - LLM returned fallback message despite having valid chunks, attempting to generate better response
+2025-12-25 15:42:48,771 - main - INFO - main.py:1493 - Gemini response generated successfully
+2025-12-25 15:42:48,771 - main - INFO - main.py:1276 - Request completed successfully (ID: b1cce79b-4043-43c0-9d36-b52a692d0a70) in 8372.59ms. Retrieved 5 chunks.
+2025-12-25 15:43:25,886 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:43:26,332 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:43:26,334 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 15:43:26,336 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:45:48,200 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 15:45:50,764 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:45:51,206 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:45:51,210 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 15:45:51,210 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 15:45:53,800 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:45:54,260 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:45:54,261 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 15:45:54,262 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:45:54,262 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 15:47:56,243 - main - INFO - main.py:1209 - Received /ask request (ID: edbabda7-b471-4471-ac04-cab97c31ce94): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:47:56,243 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: edbabda7-b471-4471-ac04-cab97c31ce94)...
+2025-12-25 15:47:56,243 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:47:56,243 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: edbabda7-b471-4471-ac04-cab97c31ce94)...
+2025-12-25 15:47:56,244 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:47:56,244 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 15:47:56,244 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 15:47:58,671 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:47:59,404 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 15:47:59,861 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 15:47:59,865 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3621.20ms
+2025-12-25 15:47:59,866 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 15:47:59,867 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 15:47:59,867 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 15:47:59,867 - main - INFO - main.py:1476 - Generating response with Gemini...
+2025-12-25 15:48:01,900 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:48:03,128 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:48:05,276 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:48:05,277 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:48:05,277 - main - WARNING - main.py:1483 - LLM returned fallback message despite having valid chunks, attempting to generate better response
+2025-12-25 15:48:05,277 - main - INFO - main.py:1494 - Gemini response generated successfully
+2025-12-25 15:48:05,277 - main - INFO - main.py:1276 - Request completed successfully (ID: edbabda7-b471-4471-ac04-cab97c31ce94) in 9034.53ms. Retrieved 5 chunks.
+2025-12-25 15:49:55,274 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 15:49:57,873 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:49:58,353 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:49:58,361 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 15:49:58,364 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 15:50:00,460 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:50:00,900 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:50:00,901 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 15:50:00,902 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:50:00,902 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 15:51:22,549 - main - INFO - main.py:1209 - Received /ask request (ID: af520cc2-3144-4e06-996b-4adb5307a599): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:51:22,550 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: af520cc2-3144-4e06-996b-4adb5307a599)...
+2025-12-25 15:51:22,550 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:51:22,550 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: af520cc2-3144-4e06-996b-4adb5307a599)...
+2025-12-25 15:51:22,550 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 15:51:22,550 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 15:51:22,550 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 15:51:24,812 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:51:25,125 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 15:51:25,579 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 15:51:25,582 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3031.68ms
+2025-12-25 15:51:25,582 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 15:51:25,583 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 15:51:25,583 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 15:51:25,583 - main - INFO - main.py:1476 - Generating response with Gemini...
+2025-12-25 15:51:26,442 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:51:27,596 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:51:29,756 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:51:29,756 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:51:29,756 - main - WARNING - main.py:1483 - LLM returned fallback message despite having valid chunks, synthesizing a proper response
+2025-12-25 15:51:29,756 - main - INFO - main.py:1498 - Gemini response generated successfully
+2025-12-25 15:51:29,756 - main - INFO - main.py:1276 - Request completed successfully (ID: af520cc2-3144-4e06-996b-4adb5307a599) in 7206.85ms. Retrieved 5 chunks.
+2025-12-25 15:51:56,782 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 15:51:59,227 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:51:59,667 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:51:59,678 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 15:51:59,681 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 15:52:01,954 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:52:02,396 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 15:52:02,400 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 15:52:02,401 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:52:02,402 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 15:52:38,405 - main - INFO - main.py:1209 - Received /ask request (ID: 50d518e8-2a87-4943-841e-1cb587174610): 'What is ROS 2?...' with top_k=5
+2025-12-25 15:52:38,405 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: 50d518e8-2a87-4943-841e-1cb587174610)...
+2025-12-25 15:52:38,406 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 15:52:38,407 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: 50d518e8-2a87-4943-841e-1cb587174610)...
+2025-12-25 15:52:38,407 - main - INFO - main.py:1419 - RAG agent processing query: 'What is ROS 2?...' with top_k=5
+2025-12-25 15:52:38,408 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 15:52:38,408 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is ROS 2?...' (top_k: 5)
+2025-12-25 15:52:40,760 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 15:52:41,091 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 15:52:41,526 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 15:52:41,529 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3120.14ms
+2025-12-25 15:52:41,529 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 15:52:41,531 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 15:52:41,531 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 15:52:41,532 - main - INFO - main.py:1476 - Generating response with Gemini...
+2025-12-25 15:52:42,403 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:52:43,568 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:52:45,736 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:52:45,748 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 15:52:45,768 - main - WARNING - main.py:1483 - LLM returned fallback message despite having valid chunks, synthesizing a proper response
+2025-12-25 15:52:45,772 - main - INFO - main.py:1498 - Gemini response generated successfully
+2025-12-25 15:52:45,772 - main - INFO - main.py:1276 - Request completed successfully (ID: 50d518e8-2a87-4943-841e-1cb587174610) in 7367.91ms. Retrieved 5 chunks.
+2025-12-25 16:02:10,856 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 16:02:13,716 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:02:14,176 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:02:14,179 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 16:02:14,180 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 16:02:16,269 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:02:16,760 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:02:16,762 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 16:02:16,762 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:02:16,762 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 16:03:57,526 - main - INFO - main.py:1209 - Received /ask request (ID: c7093c9f-5762-4801-9312-92ccea7791af): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:03:57,526 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: c7093c9f-5762-4801-9312-92ccea7791af)...
+2025-12-25 16:03:57,527 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:03:57,527 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: c7093c9f-5762-4801-9312-92ccea7791af)...
+2025-12-25 16:03:57,527 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:03:57,527 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 16:03:57,527 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 16:03:59,743 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:04:00,480 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 16:04:00,968 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 16:04:00,971 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3443.62ms
+2025-12-25 16:04:00,971 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 16:04:00,972 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 16:04:00,972 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 16:04:00,972 - main - INFO - main.py:1476 - Generating response with Gemini...
+2025-12-25 16:04:01,845 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:04:03,004 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:04:05,156 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:04:05,157 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:04:05,157 - main - WARNING - main.py:1483 - LLM returned fallback message despite having valid chunks, synthesizing a proper response
+2025-12-25 16:04:05,157 - main - INFO - main.py:1514 - Gemini response generated successfully
+2025-12-25 16:04:05,157 - main - INFO - main.py:1276 - Request completed successfully (ID: c7093c9f-5762-4801-9312-92ccea7791af) in 7631.24ms. Retrieved 5 chunks.
+2025-12-25 16:04:50,680 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 16:04:53,379 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:04:53,822 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:04:53,828 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 16:04:53,829 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 16:04:56,374 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:04:56,823 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:04:56,824 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 16:04:56,825 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:04:56,825 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 16:05:24,671 - main - INFO - main.py:1209 - Received /ask request (ID: 9adcb1c4-4c6c-47e5-8cc7-c80ef22a6566): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:05:24,672 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: 9adcb1c4-4c6c-47e5-8cc7-c80ef22a6566)...
+2025-12-25 16:05:24,672 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:05:24,672 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: 9adcb1c4-4c6c-47e5-8cc7-c80ef22a6566)...
+2025-12-25 16:05:24,672 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:05:24,672 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 16:05:24,672 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 16:05:26,887 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:05:27,256 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 16:05:27,727 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 16:05:27,729 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3056.62ms
+2025-12-25 16:05:27,729 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 16:05:27,730 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 16:05:27,730 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 16:05:27,730 - main - INFO - main.py:1476 - Generating response with Gemini...
+2025-12-25 16:05:28,599 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:05:29,757 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:05:31,914 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:05:31,915 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:05:31,915 - main - WARNING - main.py:1486 - LLM returned fallback message or raw content, synthesizing a proper response
+2025-12-25 16:05:31,915 - main - INFO - main.py:1532 - Gemini response generated successfully
+2025-12-25 16:05:31,916 - main - INFO - main.py:1276 - Request completed successfully (ID: 9adcb1c4-4c6c-47e5-8cc7-c80ef22a6566) in 7244.38ms. Retrieved 5 chunks.
+2025-12-25 16:06:01,858 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 16:06:04,341 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:06:04,793 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:06:04,802 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 16:06:04,805 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 16:06:06,911 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:06:07,388 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:06:07,392 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 16:06:07,394 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:06:07,395 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 16:07:01,013 - main - INFO - main.py:1209 - Received /ask request (ID: a317d410-3434-4d05-b6ee-201be681d501): 'What is ROS 2?...' with top_k=5
+2025-12-25 16:07:01,013 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: a317d410-3434-4d05-b6ee-201be681d501)...
+2025-12-25 16:07:01,014 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:07:01,014 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: a317d410-3434-4d05-b6ee-201be681d501)...
+2025-12-25 16:07:01,015 - main - INFO - main.py:1419 - RAG agent processing query: 'What is ROS 2?...' with top_k=5
+2025-12-25 16:07:01,015 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 16:07:01,016 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is ROS 2?...' (top_k: 5)
+2025-12-25 16:07:03,366 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:07:03,691 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 16:07:04,278 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 16:07:04,281 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3264.37ms
+2025-12-25 16:07:04,282 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 16:07:04,283 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 16:07:04,284 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 16:07:04,284 - main - INFO - main.py:1476 - Generating response with Gemini...
+2025-12-25 16:07:05,409 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:07:06,576 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:07:08,746 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:07:08,758 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:07:08,780 - main - WARNING - main.py:1486 - LLM returned fallback message or raw content, synthesizing a proper response
+2025-12-25 16:07:08,782 - main - INFO - main.py:1532 - Gemini response generated successfully
+2025-12-25 16:07:08,784 - main - INFO - main.py:1276 - Request completed successfully (ID: a317d410-3434-4d05-b6ee-201be681d501) in 7771.35ms. Retrieved 5 chunks.
+2025-12-25 16:11:37,692 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 16:11:40,338 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:11:40,801 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:11:40,804 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 16:11:40,805 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 16:11:42,889 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:11:43,349 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:11:43,351 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 16:11:43,351 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:11:43,351 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 16:14:08,345 - main - INFO - main.py:1209 - Received /ask request (ID: 16b03c95-f691-46a9-919b-6e3172ae20db): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:14:08,346 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: 16b03c95-f691-46a9-919b-6e3172ae20db)...
+2025-12-25 16:14:08,346 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:14:08,346 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: 16b03c95-f691-46a9-919b-6e3172ae20db)...
+2025-12-25 16:14:08,346 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:14:08,346 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 16:14:08,347 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 16:14:10,566 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:14:11,331 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 16:14:11,802 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 16:14:11,804 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3457.35ms
+2025-12-25 16:14:11,804 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 16:14:11,805 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 16:14:11,805 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 16:14:11,805 - main - INFO - main.py:1480 - Generating response with Gemini...
+2025-12-25 16:14:12,790 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:14:13,948 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:14:16,111 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:14:16,111 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:14:16,112 - main - WARNING - main.py:1490 - LLM returned fallback message or raw content, synthesizing a proper response
+2025-12-25 16:14:16,112 - main - INFO - main.py:1536 - Gemini response generated successfully
+2025-12-25 16:14:16,112 - main - INFO - main.py:1276 - Request completed successfully (ID: 16b03c95-f691-46a9-919b-6e3172ae20db) in 7766.69ms. Retrieved 5 chunks.
+2025-12-25 16:15:32,995 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 16:15:35,563 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:15:36,032 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:15:36,037 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 16:15:36,038 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 16:15:38,117 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:15:38,559 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:15:38,561 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 16:15:38,562 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:15:38,562 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 16:18:35,603 - main - INFO - main.py:1209 - Received /ask request (ID: e2428bd4-a25c-42e2-82a4-d2a7c77a156b): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:18:35,603 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: e2428bd4-a25c-42e2-82a4-d2a7c77a156b)...
+2025-12-25 16:18:35,604 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:18:35,604 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: e2428bd4-a25c-42e2-82a4-d2a7c77a156b)...
+2025-12-25 16:18:35,604 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:18:35,604 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 16:18:35,604 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 16:18:38,006 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:18:38,330 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 16:18:38,784 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 16:18:38,786 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3182.09ms
+2025-12-25 16:18:38,787 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 16:18:38,787 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 16:18:38,788 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 16:18:38,788 - main - INFO - main.py:1480 - Generating response with Gemini...
+2025-12-25 16:18:39,641 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:18:40,796 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:18:42,951 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:18:42,951 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:18:42,951 - main - WARNING - main.py:1490 - LLM returned fallback message or raw content, synthesizing a proper response
+2025-12-25 16:18:42,951 - main - INFO - main.py:1566 - Gemini response generated successfully
+2025-12-25 16:18:42,952 - main - INFO - main.py:1276 - Request completed successfully (ID: e2428bd4-a25c-42e2-82a4-d2a7c77a156b) in 7348.51ms. Retrieved 5 chunks.
+2025-12-25 16:20:58,373 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-25 16:21:00,810 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:21:01,266 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:21:01,275 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-25 16:21:01,278 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-25 16:21:03,283 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:21:03,735 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-25 16:21:03,736 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-25 16:21:03,737 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:21:03,737 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-25 16:23:00,485 - main - INFO - main.py:1209 - Received /ask request (ID: ae2a02f3-a10a-4dca-9a17-856e89f72f05): 'What is ROS 2?...' with top_k=5
+2025-12-25 16:23:00,486 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: ae2a02f3-a10a-4dca-9a17-856e89f72f05)...
+2025-12-25 16:23:00,487 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:23:00,487 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: ae2a02f3-a10a-4dca-9a17-856e89f72f05)...
+2025-12-25 16:23:00,488 - main - INFO - main.py:1419 - RAG agent processing query: 'What is ROS 2?...' with top_k=5
+2025-12-25 16:23:00,488 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 16:23:00,489 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is ROS 2?...' (top_k: 5)
+2025-12-25 16:23:02,674 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:23:03,429 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 16:23:03,903 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 16:23:03,913 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 3423.88ms
+2025-12-25 16:23:03,914 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 16:23:03,917 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 16:23:03,919 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 16:23:03,920 - main - INFO - main.py:1480 - Generating response with Gemini...
+2025-12-25 16:23:04,808 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:23:05,979 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:23:08,171 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:23:08,182 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:23:08,224 - main - WARNING - main.py:1490 - LLM returned fallback message or raw content, synthesizing a proper response
+2025-12-25 16:23:08,226 - main - INFO - main.py:1566 - Gemini response generated successfully
+2025-12-25 16:23:08,228 - main - INFO - main.py:1276 - Request completed successfully (ID: ae2a02f3-a10a-4dca-9a17-856e89f72f05) in 7742.61ms. Retrieved 5 chunks.
+2025-12-25 16:49:55,808 - main - INFO - main.py:1209 - Received /ask request (ID: 170548ae-3b79-44a3-a94b-865475b3d765): 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:49:55,808 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: 170548ae-3b79-44a3-a94b-865475b3d765)...
+2025-12-25 16:49:55,810 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-25 16:49:55,827 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: 170548ae-3b79-44a3-a94b-865475b3d765)...
+2025-12-25 16:49:55,829 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-25 16:49:55,836 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-25 16:49:55,837 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-25 16:49:58,499 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-25 16:49:59,859 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-25 16:50:00,300 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-25 16:50:00,306 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 4465.47ms
+2025-12-25 16:50:00,307 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-25 16:50:00,311 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-25 16:50:00,313 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-25 16:50:00,320 - main - INFO - main.py:1480 - Generating response with Gemini...
+2025-12-25 16:50:01,309 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:50:02,473 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:50:04,647 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:50:04,661 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-25 16:50:04,672 - main - WARNING - main.py:1490 - LLM returned fallback message or raw content, synthesizing a proper response
+2025-12-25 16:50:04,673 - main - INFO - main.py:1566 - Gemini response generated successfully
+2025-12-25 16:50:04,674 - main - INFO - main.py:1276 - Request completed successfully (ID: 170548ae-3b79-44a3-a94b-865475b3d765) in 8865.97ms. Retrieved 5 chunks.
+2025-12-27 19:08:37,536 - main - INFO - main.py:1155 - RAG Agent API starting up...
+2025-12-27 19:08:42,662 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-27 19:08:43,276 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-27 19:08:43,281 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-27 19:08:43,282 - main - INFO - main.py:1159 - Successfully connected to Qdrant
+2025-12-27 19:08:46,450 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-27 19:08:46,964 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-27 19:08:46,965 - main - INFO - main.py:1166 - Qdrant collection 'rag_embedding' exists with 195 vectors
+2025-12-27 19:08:46,965 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-27 19:08:46,965 - main - INFO - main.py:1178 - Successfully initialized Gemini client
+2025-12-27 19:13:42,368 - main - INFO - main.py:1209 - Received /ask request (ID: 6a7ba412-c103-4937-a758-42216bb6145a): 'What is humanoid robotics?...' with top_k=5
+2025-12-27 19:13:42,368 - main - INFO - main.py:1225 - Creating RAG agent for query (ID: 6a7ba412-c103-4937-a758-42216bb6145a)...
+2025-12-27 19:13:42,369 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
+2025-12-27 19:13:42,369 - main - INFO - main.py:1232 - Processing query with RAG agent (ID: 6a7ba412-c103-4937-a758-42216bb6145a)...
+2025-12-27 19:13:42,370 - main - INFO - main.py:1419 - RAG agent processing query: 'What is humanoid robotics?...' with top_k=5
+2025-12-27 19:13:42,370 - main - INFO - main.py:1423 - Starting retrieval from Qdrant...
+2025-12-27 19:13:42,370 - main - INFO - main.py:1319 - Starting retrieval for query: 'What is humanoid robotics?...' (top_k: 5)
+2025-12-27 19:13:46,076 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-27 19:13:46,895 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-12-27 19:13:47,688 - httpx - INFO - _client.py:1025 - HTTP Request: POST https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding/points/query "HTTP/1.1 200 OK"
+2025-12-27 19:13:47,691 - main - INFO - main.py:1378 - Retrieved 5 chunks for query in 5320.77ms
+2025-12-27 19:13:47,692 - main - INFO - main.py:1379 - Retrieval context status: NON-EMPTY
+2025-12-27 19:13:47,693 - main - INFO - main.py:1435 - Retrieved 5 chunks from Qdrant
+2025-12-27 19:13:47,693 - main - INFO - main.py:1456 - Using 5 chunks with valid content for generation
+2025-12-27 19:13:47,693 - main - INFO - main.py:1480 - Generating response with Gemini...
+2025-12-27 19:13:48,845 - main - ERROR - main.py:207 - Attempt 1 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-27 19:13:50,006 - main - ERROR - main.py:207 - Attempt 2 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-27 19:13:52,219 - main - ERROR - main.py:207 - Attempt 3 failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-27 19:13:52,220 - main - ERROR - main.py:211 - All 3 attempts to generate content failed: 403 Permission denied: Consumer 'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c' has been suspended. [reason: "CONSUMER_SUSPENDED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "containerInfo"
+  value: "api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c"
+}
+metadata {
+  key: "consumer"
+  value: "projects/99172258754"
+}
+, locale: "en-US"
+message: "Permission denied: Consumer \'api_key:AIzaSyD7ZluZbVTG2cM7JnRIupXQ3yk6YDY9p9c\' has been suspended."
+]
+2025-12-27 19:13:52,220 - main - WARNING - main.py:1490 - LLM returned fallback message or raw content, synthesizing a proper response
+2025-12-27 19:13:52,220 - main - INFO - main.py:1566 - Gemini response generated successfully
+2025-12-27 19:13:52,221 - main - INFO - main.py:1276 - Request completed successfully (ID: 6a7ba412-c103-4937-a758-42216bb6145a) in 9853.43ms. Retrieved 5 chunks.
+2025-12-27 19:14:33,989 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-12-27 19:14:34,618 - httpx - INFO - _client.py:1025 - HTTP Request: GET https://5c8180f4-7974-4717-8d69-6f8c4f9103a7.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/rag_embedding "HTTP/1.1 200 OK"
+2025-12-27 19:14:34,620 - main - INFO - main.py:234 - Successfully verified Qdrant connection to collection: rag_embedding
+2025-12-27 19:14:34,622 - main - INFO - main.py:127 - Initialized Gemini client with GEMINI_API_KEY using model: gemini-1.5-flash
